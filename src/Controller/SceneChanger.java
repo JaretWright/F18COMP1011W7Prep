@@ -2,7 +2,6 @@ package Controller;
 import java.io.IOException;
 
 import Models.MobilePhone;
-import Views.ControllerClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,7 +21,6 @@ public class SceneChanger {
     public static void changeScenes(ActionEvent event, String viewName, String title) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
-        System.out.println("Viewname: "+ viewName);
         loader.setLocation(new Object(){}.getClass().getResource(viewName));
         Parent parent = loader.load();
 

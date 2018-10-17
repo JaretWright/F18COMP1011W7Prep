@@ -135,21 +135,21 @@ public class MobilePhone {
      * This method will copy the file specified to the images directory on this server and give it
      * a unique name
      */
-    public void copyImageFile() throws IOException
-    {
-        //create a new Path to copy the image into a local directory
-        Path sourcePath = imageFile.toPath();
-
-        String uniqueFileName = getUniqueFileName(imageFile.getName());
-
-        Path targetPath = Paths.get("./src/images/"+uniqueFileName);
-
-        //copy the file to the new directory
-        Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-
-        //update the imageFile to point to the new File
-        imageFile = new File(targetPath.toString());
-    }
+//    public void copyImageFile() throws IOException
+//    {
+//        //create a new Path to copy the image into a local directory
+//        Path sourcePath = imageFile.toPath();
+//
+//        String uniqueFileName = getUniqueFileName(imageFile.getName());
+//
+//        Path targetPath = Paths.get("./src/images/"+uniqueFileName);
+//
+//        //copy the file to the new directory
+//        Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+//
+//        //update the imageFile to point to the new File
+//        imageFile = new File(targetPath.toString());
+//    }
 
     /**
      * This method will receive a String that represents a file name and return a

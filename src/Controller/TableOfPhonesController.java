@@ -2,6 +2,7 @@ package Controller;
 
 import Models.DBConnect;
 import Models.MobilePhone;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -9,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -53,5 +55,24 @@ public class TableOfPhonesController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void viewSelectedPhone(ActionEvent event) throws IOException {
+        MobilePhone phone = tableView.getSelectionModel().getSelectedItem();
+        if (phone != null)
+        {
+            SceneChanger.changeScenes(event, "../Views/PhoneView.fxml",
+                                        "Phone View",phone,
+                                        new PhoneViewController());
+        }
+        else
+            System.err.println("no phone selected");
+    }
+
+    @FXML
+    public void viewGraphButton(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event,"../Views/GraphView.fxml",
+                                    "Cool graph");
     }
 }

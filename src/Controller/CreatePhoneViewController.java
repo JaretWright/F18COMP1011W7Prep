@@ -2,8 +2,6 @@ package Controller;
 
 import Models.DBConnect;
 import Models.MobilePhone;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -172,5 +170,4 @@ public class CreatePhoneViewController implements Initializable {
         //SceneChanger sc = new SceneChanger();
         SceneChanger.changeScenes(actionEvent, "../Views/TableOfPhones.fxml","Table of Phones");
     }
-
 }
